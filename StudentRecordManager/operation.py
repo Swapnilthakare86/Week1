@@ -76,7 +76,7 @@ def viewStudents():
         print("No student records found.")
         return
 
-    print("\n--- Student Records ---")
+    print("\n--- Student Records ---\n")
     for student in data:
         print(f"Roll No: {student['rollNo']}  Name: {student['name']}  Age: {student['age']}   Grade: {student['grade']}  Email: {student['email']}")
 
@@ -84,7 +84,7 @@ def viewStudents():
 def updateStudent():
     data = read()
 
-    update_roll = input_nonempty("Enter Roll No to Update: ")
+    update_roll = input_nonempty("Enter Roll No: ")
 
     for student in data:
         if student["rollNo"] == update_roll:
@@ -103,7 +103,7 @@ def updateStudent():
 def deleteStudent():
     data = read()
 
-    delete_roll = input_nonempty("Enter Roll No to Delete: ")
+    delete_roll = input_nonempty("Enter Roll No: ")
 
     new_data = [student for student in data if student["rollNo"] != delete_roll]
 
