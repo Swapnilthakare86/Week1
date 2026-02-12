@@ -4,9 +4,7 @@
 
 |
 ----main.py 
-|
 --- operation.py
-|
 --- validation.py
 
 # Run the program:
@@ -43,6 +41,6 @@
 
 # validation
 
-input_int(prompt): Ensures numeric input.
-input_nonempty(prompt): Ensures input is not empty.
-check_email(prompt): Ensures the email contains @gmail.com.
+input_int(val): Ensures numeric input.
+input_nonempty(val): Ensures input is not empty.
+check_email(val): Ensures the email contains @gmail.com.
