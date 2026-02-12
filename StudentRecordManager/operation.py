@@ -78,7 +78,7 @@ def viewStudents():
 
     print("\n--- Student Records ---")
     for student in data:
-        print(f"Roll No: {student['rollNo']}, Name: {student['name']}, Age: {student['age']}, Grade: {student['grade']}, Email: {student['email']}")
+        print(f"Roll No: {student['rollNo']}  Name: {student['name']}  Age: {student['age']}   Grade: {student['grade']}  Email: {student['email']}")
 
 
 def updateStudent():
