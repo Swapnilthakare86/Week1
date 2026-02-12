@@ -4,7 +4,7 @@ def main():
     init_file()
 
     while True:
-        print("\n===== Student Record Manager =====")
+        print("\n===== Student Record Manager =====\n")
         print("1. Add Student Record")
         print("2. View Student Records")
         print("3. Update Student Record")
