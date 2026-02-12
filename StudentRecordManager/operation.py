@@ -121,7 +121,7 @@ def searchStudent():
 
     for student in data:
         if student["rollNo"] == search_roll:
-            print(f"Found: Roll No: {student['rollNo']}, Name: {student['name']}, Age: {student['age']}, Grade: {student['grade']}, Email: {student['email']}")
+            print(f"Roll No: {student['rollNo']}   Name: {student['name']}    Age: {student['age']}  Grade: {student['grade']}  Email: {student['email']}")
             return
 
     print("Student not found.")
