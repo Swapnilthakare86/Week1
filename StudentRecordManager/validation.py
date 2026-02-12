@@ -20,7 +20,8 @@ def input_nonempty(val):
 def check_email(val):
     while True:
         email = input(val)
-       
+        if not email:
+            print("Emial not empty")
         if "@gmail.com" in email:
             return email
         else:
