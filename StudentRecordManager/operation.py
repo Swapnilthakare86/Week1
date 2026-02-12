@@ -1,54 +1,45 @@
+from validation import input_nonempty,input_int
+
 import json
 import os
 
 filename = "student_records.json"
 
 
-# File Initialization
+# file check not exit then create
 def init_file():
     if not os.path.exists(filename):
         with open(filename, "w") as file:
             json.dump([], file)
 
 
-# Read
+#read data from file
 def read():
     try:
         with open(filename, "r") as file:
-            return json.load(file)
-   
-    except Exception as e:
-        print(f"Error reading file: {e}")
-        return []
+            data = json.load(file)
+            return data
+        
+    except FileNotFoundError:
+        print("File not found.")
+        
+    except:
+        print("Error in reading file") 
 
-#Write
+
+# Write data to file
 def write(data):
     try:
         with open(filename, "w") as file:
             json.dump(data, file, indent=4)
-    except Exception as e:
-        print(f"Error writing file: {e}")
+    
+    except FileNotFoundError:
+        print("File not found.")
 
+    except:
+        print("Error writing file")
 
-
-# Input Validation
-def input_int(val):
-    while True:
-        try:
-            value = int(input(val))
-            return value
-        except ValueError:
-            print("Invalid input! Please enter a number.")
-
-
-def input_nonempty(val):
-    while True:
-        value = input(val).strip()
-        if value:
-            return value
-        else:
-            print("Input cannot empty")
-
+    
 
 
 def addStudent():
