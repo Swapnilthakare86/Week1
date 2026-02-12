@@ -1,4 +1,4 @@
-from validation import input_nonempty,input_int
+from validation import input_nonempty,input_int,check_email
 
 import json
 import os
@@ -41,7 +41,6 @@ def write(data):
 
     
 
-
 def addStudent():
     data = read()
 
@@ -55,7 +54,7 @@ def addStudent():
     name = input_nonempty("Enter Name: ")
     age =  input_int("Enter Age: ")
     grade = input_nonempty("Enter Grade: ")
-    email = input_nonempty("Enter Email: ")
+    email = check_email("Enter Email: ")
 
     new_student = {
         "rollNo": rollNo,
