@@ -5,7 +5,7 @@ def input_int(val):
             value = int(input(val))
             return value
         except ValueError:
-            print("Invalid input! Please enter a number.")
+            print("Please enter a number.")
 
 
 def input_nonempty(val):
