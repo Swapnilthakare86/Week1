@@ -16,3 +16,12 @@ def input_nonempty(val):
         else:
             print("Input cannot empty")
 
+
+def check_email(val):
+    while True:
+        email = input(val)
+       
+        if "@gmail.com" in email:
+            return email
+        else:
+            print("Enter a valid email.")
