@@ -5,5 +5,12 @@
         "age": 28,
         "grade": "A",
         "email": "swapnil@gmail.com"
+    },
+    {
+        "rollNo": "2",
+        "name": "yash",
+        "age": 38,
+        "grade": "B",
+        "email": "yash35@gmail.com"
     }
 ]
