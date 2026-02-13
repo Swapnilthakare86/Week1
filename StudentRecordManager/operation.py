@@ -70,7 +70,7 @@ def addStudent():
     write(data)
     print("Student added.")
 
-
+#view
 def viewStudents():
     data = read()
 
@@ -82,7 +82,7 @@ def viewStudents():
     for student in data:
         print(f"Roll No: {student['rollNo']}  Name: {student['name']}  Age: {student['age']}   Grade: {student['grade']}  Email: {student['email']}")
 
-
+#update
 def updateStudent():
     data = read()
 
@@ -118,7 +118,7 @@ def updateStudent():
 
     print("Student not found.")
 
-
+#delete
 def deleteStudent():
     data = read()
 
@@ -138,7 +138,7 @@ def deleteStudent():
         write(new_data)
         print("Student deleted.")
 
-
+#search
 def searchStudent():
     data = read()
 
@@ -154,6 +154,30 @@ def searchStudent():
             return
 
     print("Student not found.")
+
+# filter by grade
+def filterByGrade():
+    data = read()
+
+    # back to menu
+    if back():
+        return
+
+    grade_input = input_nonempty("Enter Grade to Filter: ")
+
+    filtered_students = [student for student in data if student["grade"].lower() == grade_input.lower()]
+
+    if not filtered_students:
+        print("No students found in this grade.")
+        return
+
+    print(f"\n--- Students in Grade {grade_input} ---\n")
+    for student in filtered_students:
+        print(f"Roll No: {student['rollNo']}  "
+              f"Name: {student['name']}  "
+              f"Age: {student['age']}  "
+              f"Grade: {student['grade']}  "
+              f"Email: {student['email']}")
 
 
 def back():
