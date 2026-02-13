@@ -6,7 +6,7 @@ import os
 filename = "student_records.json"
 
 
-# file check not exit then create
+# file check,not exit then create
 def init_file():
     if not os.path.exists(filename):
         with open(filename, "w") as file:
@@ -88,10 +88,22 @@ def updateStudent():
 
     for student in data:
         if student["rollNo"] == update_roll:
-            student["name"] = input_nonempty("New Name: ")
-            student["age"] =  input_int("New Age: ")
-            student["grade"] = input_nonempty("New Grade: ")
-            student["email"] = input_nonempty("New Email: ")
+            
+            new_name = input(f"New name (current: {student['name']}): ")
+            if new_name:
+                student["name"] = new_name
+
+            new_age = input(f"New Age (current: {student['age']}): ")
+            if new_name:
+                student["age"] = new_age
+
+            new_grade = input(f"New Grade (current: {student['grade']}): ")
+            if new_name:
+                student["age"] = new_grade
+
+            new_email = input(f"New email (current: {student['email']}): ")
+            if new_name:
+                student["age"] = new_email
 
             write(data)
             print("Student updated.")
