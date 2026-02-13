@@ -38,11 +38,13 @@ def write(data):
 
     except:
         print("Error writing file")
-
-    
-
+  
 def addStudent():
     data = read()
+
+    # back to menu
+    if back():
+        return
 
     rollNo = input_nonempty("Enter Roll No: ")
 
@@ -84,6 +86,11 @@ def viewStudents():
 def updateStudent():
     data = read()
 
+    # back to menu
+    if back():
+        return
+
+
     update_roll = input_nonempty("Enter Roll No: ")
 
     for student in data:
@@ -115,6 +122,11 @@ def updateStudent():
 def deleteStudent():
     data = read()
 
+    # back to menu
+    if back():
+        return
+
+
     delete_roll = input_nonempty("Enter Roll No: ")
 
     new_data = [student for student in data if student["rollNo"] != delete_roll]
@@ -129,6 +141,11 @@ def deleteStudent():
 
 def searchStudent():
     data = read()
+
+    # back to menu
+    if back():
+        return
+
     search_roll = input_nonempty("Enter Roll No to Search: ")
 
     for student in data:
@@ -137,3 +154,10 @@ def searchStudent():
             return
 
     print("Student not found.")
+
+
+def back():
+    back_ = input("Enter 0 Go Menu or press enter to continue: ")
+    if back_ == "0":
+        return True
+    return False
